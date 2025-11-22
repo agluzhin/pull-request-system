@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": [ "userId", "userName", "teamName",  "isActive"],
+  "properties": {
+    "userId": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "teamName": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    }
+  }
+}
