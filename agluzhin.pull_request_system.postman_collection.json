@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "fcf7dafb-b5c6-4df1-9952-325345491d7e",
+		"name": "agluzhin.pull_request_system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42335872"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "setIsActive",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"0002020\",\r\n    \"userName\": \"Ben\",\r\n    \"teamName\": \"backend\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/users/setIsActive"
+					},
+					"response": []
+				},
+				{
+					"name": "getReview",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/getReview?userId=0002020",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"getReview"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "0002020"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "team",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"teamName\": \"backend\",\r\n    \"teamMembers\": [\r\n        {\r\n            \"userId\": \"0001010\",\r\n            \"userName\": \"Alex\",\r\n            \"isActive\": true\r\n        },\r\n        {\r\n            \"userId\": \"0002020\",\r\n            \"userName\": \"Ben\",\r\n            \"isActive\": false\r\n        },\r\n        {\r\n            \"userId\": \"0003030\",\r\n            \"userName\": \"Peter\",\r\n            \"isActive\": true\r\n        },\r\n        {\r\n            \"userId\": \"0004040\",\r\n            \"userName\": \"John\",\r\n            \"isActive\": false\r\n        },\r\n        {\r\n            \"userId\": \"0005050\",\r\n            \"userName\": \"Kate\",\r\n            \"isActive\": false\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/team/add"
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/team/get?teamName=backend",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"team",
+								"get"
+							],
+							"query": [
+								{
+									"key": "teamName",
+									"value": "backend"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pullRequest",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pullRequestId\": \"0001010\",\r\n    \"pullRequestName\": \"PR 1010\",\r\n    \"authorId\": \"0001010\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/pullRequest/create"
+					},
+					"response": []
+				},
+				{
+					"name": "merge",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pullRequestId\": \"12345665774555342\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/pullRequest/merge"
+					},
+					"response": []
+				},
+				{
+					"name": "reassign",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pullRequest/reassign?pullRequestId=0001010&oldUserId=0003030",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pullRequest",
+								"reassign"
+							],
+							"query": [
+								{
+									"key": "pullRequestId",
+									"value": "0001010"
+								},
+								{
+									"key": "oldUserId",
+									"value": "0003030"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
