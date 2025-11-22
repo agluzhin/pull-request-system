@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": [ "userId", "userName", "isActive" ],
+  "properties": {
+    "userId": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    }
+  }
+}

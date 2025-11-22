@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "required": [ "pullRequestId", "pullRequestName", "authorId",  "status", "assignedReviewers"],
+  "properties": {
+    "pullRequestId": {
+      "type": "string"
+    },
+    "pullRequestName": {
+      "type": "string"
+    },
+    "authorId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [ "OPEN", "MERGED" ]
+    },
+    "assignedReviewers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cratedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "mergedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    }
+  }
+}

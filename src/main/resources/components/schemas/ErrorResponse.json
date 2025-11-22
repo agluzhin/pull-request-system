@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": [ "error"],
+  "properties": {
+    "error": {
+      "type": "object",
+      "required": [ "code", "message" ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [ "TEAM_EXISTS", "PR_EXISTS", "PR_MERGED", "NOT_ASSIGNED", "NO_CANDIDATE", "NOT_FOUND" ],
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

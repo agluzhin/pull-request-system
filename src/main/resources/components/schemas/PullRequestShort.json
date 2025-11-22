@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": [ "pullRequestId", "pullRequestName", "authorId",  "status" ],
+  "properties": {
+    "pullRequestId": {
+      "type": "string"
+    },
+    "pullRequestName": {
+      "type": "string"
+    },
+    "authorId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [ "OPEN", "MERGED" ]
+    }
+  }
+}
